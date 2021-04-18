@@ -1,0 +1,21 @@
+import MDRaisedButton kivymd.uix.button.MDRaisedButton
+import MDTextField kivymd.uix.textfield.MDTextField
+
+BoxLayout:
+	orientation: 'vertical'
+	spacing: dp(20)
+	MDRaisedButton:
+		text: "Battery"
+		on_release:
+			app.show_battery_info()
+	MDRaisedButton:
+		text: "Vibrate"
+		on_release:
+			app.vibrate()
+	MDTextField:
+		id: field
+		hint_text: "Text to speech"
+	MDRaisedButton:
+		text: "TTS"
+		on_release:
+			app.speak(field.text)
